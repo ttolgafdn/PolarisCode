@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İletişim - Tolga Fidan</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: black;
+      color: white;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 30px;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+      text-align: center;
+    }
+
+    .contact-box {
+      background: radial-gradient(ellipse at center, #0d1b2a, #000);
+      border: 2px solid white;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+      padding: 40px;
+      width: 450px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    label {
+      font-size: 1.2em;
+      margin-bottom: 8px;
+      display: block;
+      margin-top: 8px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      font-size: 1em;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      resize: none;
+      transition: background 0.3s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    button {
+      background: white;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: block;
+      margin: 20px auto 0 auto;
+
+    }
+
+    button:hover {
+      background: #222;
+      color: white;
+      border: 1px solid white;
+    }
+
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      width: 2px;
+      height: 2px;
+      animation: blink 12s infinite ease-in-out;
+      opacity: 0;
+      z-index: 0;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      color: #aaa;
+      font-size: 0.9em;
+      position: absolute;
+      bottom: 10px;
+    }
+
+    a {
+      color: white;
+      text-decoration: underline;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="polaris.png" alt="polarislogo" width="200" height="200" style="position: center; top: 20px; left: 20px; z-index: 2;">
+  <h1>İletişim</h1>
+  <div class="contact-box">
+    <form action="https://formspree.io/f/mnnlalyo" method="POST">
+      <label for="name">Ad Soyad</label>
+      <input type="text" id="name" name="name" placeholder="Adınızı giriniz" required>
+
+      <label for="email">E-posta</label>
+      <input type="email" id="email" name="email" placeholder="E-posta adresinizi giriniz" required>
+
+      <label for="message">Mesaj</label>
+      <textarea id="message" name="message" rows="5" placeholder="Mesajınızı yazınız..." required></textarea>
+
+      <button type="submit">Gönder</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>© 2025 Tolga Fidan. Tüm hakları saklıdır.</p>
+  </footer>
+
+  <script>
+    const starCount = 1500;
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement("div");
+      star.className = "star";
+      star.style.top = Math.random() * 100 + "%";
+      star.style.left = Math.random() * 100 + "%";
+      star.style.animationDelay = Math.random() * 5 + "s";
+      star.style.animationDuration = 1 + Math.random() * 2 + "s";
+      document.body.appendChild(star);
+    }
+  </script>
+</body>
+
+</html>

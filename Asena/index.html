@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+
+        ul {
+            list-style: none;
+            font-size: 1.2em;
+            line-height: 2;
+        }
+
+        .service-container {
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+
+        }
+
+        .Proje {
+            width: 500px;
+            height: 700px;
+            background: radial-gradient(ellipse at center, #0d1b2a, #000);
+            border: 2px solid white;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 20px;
+            z-index: 1000;
+        }
+        .Proje h1 {
+            margin-top: 250px;
+        }
+        
+
+        .Proje img {
+            width: 250px;
+            height: 250px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .Proje:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+        }
+
+        .Proje p {
+            padding: 0 15px;
+            text-align: center;
+            font-size: 1.4em;
+            line-height: 1.5em;
+            margin: 0;
+            flex-grow: 1;
+            color: #ddd;
+
+        }
+
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            width: 2px;
+            height: 2px;
+            animation: blink 12s infinite ease-in-out;
+            opacity: 0;
+            z-index: 0;
+        }
+
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>Projelerim</h1>
+        <div class="divler">
+            <div class="service-container">
+                <div class="Proje">
+                    <img src="asenalogo.png" alt="asenalogo">
+                    <p>Asena İHA Takımı, 2025 yılında Aksaray
+                        Üniversitesi’nde kurulmuş genç ve dinamik bir öğrenci
+                        Takımıdır.
+                        Amacımız, milli teknoloji hamlesine katkı sağlayarak
+                        insansız hava aracı (İHA) teknolojilerinde yenilikçi
+                        çözümler üretmek, öğrencilerimize gerçek proje
+                        deneyimi kazandırmak ve ulusal yarışmalarda başarı
+                        elde etmektir.</p>
+                </div>
+                <div class="Proje">
+                    <h1>Yakında...</h1>
+                </div>
+                <div class="Proje">
+                    <h1>Yakında...</h1>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <script>
+        const starCount = 1500;
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement("div");
+            star.className = "star";
+            star.style.top = Math.random() * 99 + "%";
+            star.style.left = Math.random() * 99 + "%";
+            star.style.animationDelay = Math.random() * 5 + "s";
+            star.style.animationDuration = 1 + Math.random() * 2 + "s";
+            document.body.appendChild(star);
+        }
+    </script>
+
+</body>
+
+</html>
